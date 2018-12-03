@@ -6,18 +6,33 @@
 npm install bl-util --save-dev
 ```
 
-## 方法
+## API
 
-### url方法
+- [url链接](#url链接)
+- [date日期](#Date日期)
+
+### url链接
 
 ```javascript
 var str = 'name=zs&age=12';
 var strObj = parse(str);  // {name:'zs',age:12}
 ```
 
-### 时间方法
+### Date日期
 
-- util.dateToRemain(seconds)  将秒转成剩余时间
+- **util.formatDate(timestamp, format, timestampType)**  格式化时间戳
+    - timestamp: 时间戳，默认单位为秒
+    - format: 转换的格式,默认为`yy-mm-dd hh:mm:ss`
+    - timestampType:时间戳格式，默认是's'，可选值：`s|ms` 
+
+```javascript
+formatDate(1514822400)  // 2018-01-02 00:00:00
+formatDate(1514822400, 'yy-mm-dd')     // 2018-01-02
+formatDate(1514822400, 'mm-dd hh:mm')) // 01-02 00:00
+formatDate(1514822400, 'm月d日')) //1月2日
+```
+
+- **util.dateToRemain(seconds)**  将秒转成剩余时间
 
 ```javascript
 util.dateToRemain(100)  // 1分40秒

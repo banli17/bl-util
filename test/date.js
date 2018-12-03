@@ -31,6 +31,15 @@ describe("test formatDate", () => {
     })
 
     test("1514822400 == 2018-01-02 00:00:00", () => {
+        expect(formatDate(1514822400, 'yy-mm-dd')).toBe("2018-01-02")
+    })
+
+    test("1514822400 == 2018-01-02 00:00:00", () => {
         expect(formatDate(1514822400, 'mm-dd hh:mm')).toBe("01-02 00:00")
     })
+
+    test("1514822400 == 1月2日", () => {
+        expect(formatDate(1514822400, 'm月d日')).toBe("1月2日")
+    })
+
 })

@@ -48,14 +48,15 @@ export const addZero = (i) => {
  * @returns {string} 返回如2018-10-11 08:08:08
  */
 export const formatDate = (timestamp = new Date().getTime(), format = 'yy-mm-dd hh:mm:ss', timestampType = 's') => {
-    console.log('timestampType', timestampType)
     // php的时间戳是以秒为单位，js是以毫秒为单位
     let d = new Date(timestampType == 's' ? timestamp * 1000 : timestamp)
 
     let time = {
         yy: d.getFullYear(),
-        mm0: addZero(d.getMonth() + 1),
+        mm0: addZero(d.getMonth() + 1),  // 因为月和分都是mm，所以改月'mm0'以区别
+        m0: d.getMonth() + 1,
         dd: addZero(d.getDate()),
+        d: d.getDate(),
         hh: addZero(d.getHours()),
         mm: addZero(d.getMinutes()),
         ss: addZero(d.getSeconds())
@@ -65,7 +66,7 @@ export const formatDate = (timestamp = new Date().getTime(), format = 'yy-mm-dd 
         let formatArr = format.split(/\b/)
         return formatArr.map((f, i) => {
             // 如果mm前有yy或者后面有dd，则返回mm0
-            if (formatArr[i - 2] == 'yy' || formatArr[i + 2] == 'dd') {
+            if (formatArr[i - 2] == 'yy' || formatArr[i + 2] == 'dd' || formatArr[i + 1] == '月') {
                 return time[f + '0']
             }
             if (/\w/.test(f)) {
@@ -156,9 +157,9 @@ export const getCountDays = (month) => {
  * @param date
  */
 export const getRelativeDate = (date, n) => {
-    return formatDate({
-        timestamp: (new Date(new Date(date.replace(/-/g, '/')).getTime() + n * 24 * 60 * 60 * 1000)) / 1000,
-        type: 'd'
-    })
+    return formatDate(
+        (new Date(new Date(date.replace(/-/g, '/')).getTime() + n * 24 * 60 * 60 * 1000)) / 1000,
+        'yy-mm-dd'
+    )
 }
 
