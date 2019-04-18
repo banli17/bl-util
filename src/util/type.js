@@ -10,6 +10,10 @@ export const isArray = (o) => {
     return type(o) === 'array'
 }
 
+export const isObject = (o) => {
+    return type(o) === 'object'
+}
+
 /**
  * 判断是否为数字，排除NaN
  * @param o

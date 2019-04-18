@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for date/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">date</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.38% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>38/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.9% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>18/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.73% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.68% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/62</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isString } from "../util/type";
+&nbsp;
+/**
+ * 将时间戳转成日期
+ * @param da 时间戳
+ * @returns {string}
+ */
+export const formatDate1 = <span class="fstat-no" title="function not covered" >(d</span>a) =&gt; {
+    let d = <span class="cstat-no" title="statement not covered" >new Date(parseInt(da * 1000))</span>
+    let c = <span class="cstat-no" title="statement not covered" >new Date().getFullYear() - d.getFullYear();</span>
+    let mc = <span class="cstat-no" title="statement not covered" >new Date().getMonth() - d.getMonth();</span>
+    let dc = <span class="cstat-no" title="statement not covered" >new Date().getDate() - d.getDate();</span>
+    let year = <span class="cstat-no" title="statement not covered" >c &lt; 4 ? ['', '去年', '前年', '大前年'][c] : (String(d.getFullYear()).substring(2) + '年')</span>
+    let day = <span class="cstat-no" title="statement not covered" >(mc == 0 &amp;&amp; dc &lt; 4) ? (['', '昨天', '前天', '大前天'][dc] || '') : ((d.getMonth() + 1) + '月' + d.getDate() + '日');</span>
+<span class="cstat-no" title="statement not covered" >    return year + day + d.getHours() + '点' + (d.getMinutes() == 0 ? '' : d.getMinutes() + '分');</span>
+}
+&nbsp;
+/**
+ * 将日期转时间戳
+ * 1. 2018-01-01
+ * 2. 2018年01月01日
+ * 3. 20180101
+ * 4. Date类型
+ * @param date
+ */
+export const toTimestamp = (date) =&gt; {
+    let res
+&nbsp;
+    // 如果是字符串，转成2018/01/01（2018-01-01不兼容，需要使用/），再转时间戳
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof date == 'string') {
+        res = new Date(date.replace(/(\d{4}).*(\d{2}).*(\d{2})/g, '$1/$2/$3'))
+    } else {
+<span class="cstat-no" title="statement not covered" >        res = date</span>
+    }
+    return res.getTime() / 1000
+}
+&nbsp;
+export const addZero = (i) =&gt; {
+    return i &lt; 10 ? ('0' + i) : i
+}
+&nbsp;
+&nbsp;
+/**
+ * 将秒转成倒计时时间格式
+ * @param seconds
+ * @returns {*}
+ *
+ * 60s -&gt; 1分
+ */
+export const dateToRemain = seconds =&gt; {
+    const days = parseInt(seconds / 3600 / 24)
+    const hours = parseInt((seconds - days * 3600 * 24) / 3600)
+    const mins = parseInt((seconds - days * 3600 * 24 - hours * 3600) / 60)
+    const secs = seconds - (days * 3600 * 24 + hours * 3600 + mins * 60)
+&nbsp;
+    const desc = '天时分秒'
+    const res = [days, hours, mins, secs].reduce((a, b, i) =&gt; {
+        // console.log('a',a, 'b',b, i)
+        return b == 0 ? a : a + b + desc.charAt(i)
+    }, '')
+&nbsp;
+    return res
+}
+&nbsp;
+/**
+ * 将时间戳转成聊天、朋友圈形式的格式，如 昨天 15:22
+ * @param timestamp 时间戳
+ * @returns {string}
+ */
+export const formatWorkDate = <span class="fstat-no" title="function not covered" >(t</span>imestamp) =&gt; {
+    let d = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    if (timestamp.toString().length != 10) {</span>
+<span class="cstat-no" title="statement not covered" >        d = new Date(parseInt(timestamp))</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >        d = new Date(parseInt(timestamp * 1000))</span>
+    }
+&nbsp;
+    let c = <span class="cstat-no" title="statement not covered" >new Date().getFullYear() - d.getFullYear();</span>
+    let mc = <span class="cstat-no" title="statement not covered" >new Date().getMonth() - d.getMonth();</span>
+    let dc = <span class="cstat-no" title="statement not covered" >new Date().getDate() - d.getDate();</span>
+    let year = <span class="cstat-no" title="statement not covered" >c &lt; 4 ? ['', '去年', '前年', '大前年'][c] : (String(d.getFullYear()).substring(2) + '年')</span>
+    let day = <span class="cstat-no" title="statement not covered" >(mc == 0 &amp;&amp; dc &lt; 4) ? ['', '昨天', '前天', '大前天'][dc] : ((d.getMonth() + 1) + '月' + d.getDate() + '日')</span>
+<span class="cstat-no" title="statement not covered" >    return year</span>
+        + day
+        + addZero(d.getHours()) + '点'
+        + (d.getMinutes() == 0 ? '' : addZero(d.getMinutes()) + '分');
+}
+&nbsp;
+/**
+ * 获取当前日期是星期几
+ * @param date 2018-10-01
+ */
+export function dateToDay(date) {
+    console.log(date)
+    return new Date(`${date}`.replace(/-/g, '/')).getDay()
+}
+&nbsp;
+/**
+ *
+ * @param monthDayNum
+ * @returns {number}
+ */
+export const getCountDays = <span class="fstat-no" title="function not covered" >(m</span>onth) =&gt; {
+    var curDate = <span class="cstat-no" title="statement not covered" >new Date(`${month}/01`.replace(/-/g, '/'));</span>
+    /* 获取当前月份 */
+    var curMonth = <span class="cstat-no" title="statement not covered" >curDate.getMonth();</span>
+    /*  生成实际的月份: 由于curMonth会比实际月份小1, 故需加1 */
+<span class="cstat-no" title="statement not covered" >    curDate.setMonth(curMonth + 1);</span>
+    /* 将日期设置为0, 这里为什么要这样设置, 我不知道原因, 这是从网上学来的 */
+<span class="cstat-no" title="statement not covered" >    curDate.setDate(0);</span>
+    /* 返回当月的天数 */
+<span class="cstat-no" title="statement not covered" >    return curDate.getDate();</span>
+}
+&nbsp;
+/**
+ * 根据差额获取日期，比如
+ * @param date
+ */
+export function getRelativeDate(date, relative) {
+    return formatDate(
+        new Date(new Date(date.replace(/-/g, '/')).getTime() + relative * 24 * 60 * 60 * 1000),
+        'y-m-d',
+        'ms',
+    )
+}
+&nbsp;
+/**
+ * 将时间戳等转成 'yy-mm-dd hh:mm:ss' 等格式
+ * @param timestampType: s秒 ms毫秒，默认是s
+ * @param type: 格式
+ *  - yy-mm-dd hh:mm:ss
+ *  - mm-dd hh:mm
+ *  - week 转成星期几
+ * @returns {string} 返回如2018-10-11 08:08:08
+ */
+export const formatDate = (
+    timestamp = <span class="branch-0 cbranch-no" title="branch not covered" >new Date().getTime(),</span>
+    format = 'y-m-d h:i:s',
+    timestampType = 's',
+) =&gt; {
+    // 用于处理timestamp 为 '2018-09-09 09:09:00' 格式
+    if (isNaN(Number(timestamp))) {
+        // 将-转成/
+        try {
+            timestamp = timestamp.replace(/-/g, '/')  // 有时 - 不兼容，需要改成/
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (timestamp.length &lt; 10) <span class="cstat-no" title="statement not covered" >return timestamp</span>
+            return formatDate(new Date(timestamp).getTime(), format, 'ms')
+        } catch (e) { <span class="cstat-no" title="statement not covered" >console.error(e) </span>}
+    }
+&nbsp;
+    // php的时间戳是以秒为单位，js是以毫秒为单位
+    let d = new Date(timestampType == 's' ? timestamp * 1000 : timestamp)
+&nbsp;
+    let time = {
+        y: d.getFullYear(),
+        yy: String(d.getFullYear()).substring(2),  // 短的
+        m: addZero(d.getMonth() + 1),
+        mm: d.getMonth() + 1,
+        d: addZero(d.getDate()),
+        dd: d.getDate(),
+        h: addZero(d.getHours()),
+        i: addZero(d.getMinutes()),
+        s: addZero(d.getSeconds())
+    }
+&nbsp;
+    // 返回数字：周几
+    if (format == 'week') {
+        return dateToDay(`${time.y}/${time.m}/${time.d}`)
+    }
+&nbsp;
+    // 返回中文：周几
+    if (format == 'week_cn') {
+        const weeks = '日一二三四五六七'
+        return weeks[dateToDay(`${time.y}/${time.m}/${time.d}`)]
+    }
+&nbsp;
+    try {
+        let formatArr = format.split(/\b/)
+        return formatArr.map(f =&gt; /\w/.test(f) ? time[f] : f).join('')
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >        console.error('params format is need same as "yy-mm-dd hh:mm:ss"')</span>
+    }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 23 2018 19:52:56 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

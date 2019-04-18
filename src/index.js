@@ -1,16 +1,18 @@
-import {md5} from './src/md5'
-import {currency} from './src/currency'
-import * as datefn from './src/date'
-import * as strfn from './src/str'
-import * as pinyin from './src/pinyin'
-import * as type from './src/util/type'
+import { md5 } from './md5'
+import { currency } from './currency'
+import * as datefn from './date/index'
+import * as strfn from './string/index'
+import * as type from './util/type'
+import {debounce} from './util/debounce'
+import {findLevel} from './util/findLevel'
 
-export const blUtil = {
+const blUtil = {
     ...datefn,
     ...strfn,
-    ...pinyin,
     ...type,
     currency,
+    debounce,
+    findLevel,
     md5,
     /**
      * 将 byte 转成 kb 或 Mb
@@ -46,7 +48,7 @@ export const blUtil = {
     validForm(fields, tip) {
         console.log('value', fields)
         for (let i = 0; i < fields.length; i++) {
-            let {regExp, type, value, title, required} = fields[i]
+            let { regExp, type, value, title, required } = fields[i]
 
 
             // 默认必填，如果指定非必填则跳过
@@ -151,4 +153,4 @@ export const blUtil = {
     }
 }
 
-
+export default blUtil
