@@ -1,4 +1,6 @@
-import { isString } from "../util/type";
+import {
+    isString
+} from "../util/type";
 
 /**
  * 将时间戳转成日期
@@ -81,10 +83,10 @@ export const formatWorkDate = (timestamp) => {
     let dc = new Date().getDate() - d.getDate();
     let year = c < 4 ? ['', '去年', '前年', '大前年'][c] : (String(d.getFullYear()).substring(2) + '年')
     let day = (mc == 0 && dc < 4) ? ['', '昨天', '前天', '大前天'][dc] : ((d.getMonth() + 1) + '月' + d.getDate() + '日')
-    return year
-        + day
-        + addZero(d.getHours()) + '点'
-        + (d.getMinutes() == 0 ? '' : addZero(d.getMinutes()) + '分');
+    return year +
+        day +
+        addZero(d.getHours()) + '点' +
+        (d.getMinutes() == 0 ? '' : addZero(d.getMinutes()) + '分');
 }
 
 /**
@@ -158,9 +160,11 @@ export const formatDate = (
         // 将-转成/
         try {
             if (timestamp.length < 8) return timestamp
-            timestamp = timestamp.replace(/-/g, '/')  // 有时 - 不兼容，需要改成/
+            timestamp = timestamp.replace(/-/g, '/') // 有时 - 不兼容，需要改成/
             return formatDate(new Date(timestamp).getTime(), format, 'ms')
-        } catch (e) { console.warn(e) }
+        } catch (e) {
+            console.warn(e)
+        }
     }
 
     // 没有横杠形式 20190101
@@ -173,7 +177,7 @@ export const formatDate = (
 
     let time = {
         y: d.getFullYear(),
-        yy: String(d.getFullYear()).substring(2),  // 短的
+        yy: String(d.getFullYear()).substring(2), // 短的
         m: addZero(d.getMonth() + 1),
         mm: d.getMonth() + 1,
         d: addZero(d.getDate()),
@@ -254,18 +258,19 @@ function rangeYMArray(startTime = '', endTime = '') {
  * @param {日期转换} date和可传入Date()的格式一致
  */
 export function datejs(date = new Date().getTime()) {
+    
     // 处理兼容性
-    date = new Date(normalizeDate(date)).toGMTString()
+    date = new Date(normalizeDate(date))
     const timestamp = date.getTime()
 
     return {
-        timestamp,   // 毫秒
+        timestamp, // 毫秒
         year: date.getFullYear().toString(),
         month: addZero(date.getMonth() + 1).toString(),
         date: date.getDate().toString(),
         day: date.getDay(),
-        daysCount: getDaysCount(timestamp),  // 这里要防止date被重写
-        day_cn: '日一二三四五六'[date.getDay()],
+        daysCount: getDaysCount(timestamp), // 这里要防止date被重写
+        day_cn: '日一二三四五六' [date.getDay()],
         ymd: formatDate(timestamp, 'y-m-d', 'ms'),
         ymdhi: formatDate(timestamp, 'y-m-d h:i', 'ms'),
         ymdhis: formatDate(timestamp, 'y-m-d h:i:s', 'ms'),

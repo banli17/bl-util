@@ -1,4 +1,4 @@
-import { dateToRemain, toTimestamp, formatDate, getRelativeDate, datejs } from "../src/date/index"
+import { dateToRemain, toTimestamp,  getRelativeDate, datejs } from "../src/date/index"
 
 describe("test dateToRemain", () => {
     test("8秒 == 8秒", () => {
@@ -24,69 +24,6 @@ describe("test toTimestamp，将字符串转时间戳", () => {
     })
 })
 
-
-describe("test formatDate", () => {
-    test("1514822400 == 2018-01-02 00:00:00", () => {
-        expect(formatDate(1514822400)).toBe("2018-01-02 00:00:00")
-    })
-
-    test("1514822400 == 2018-01-02 00:00:00", () => {
-        expect(formatDate(1514822400, 'y-m-d')).toBe("2018-01-02")
-    })
-
-    test("2018-02-03 08:34:22 == 02-03 08:34", () => {
-        expect(formatDate('2018-02-03 08:34:22', 'm-d h:i')).toBe("02-03 08:34")
-    })
-
-    test("1514822400 == 18-01-02", () => {
-        expect(formatDate(1514822400, 'yy-mm-dd')).toBe("18-1-2")
-    })
-
-    test("1514822400 == 2018-01-02 00:00:00", () => {
-        expect(formatDate(1514822400, 'm-d h:i')).toBe("01-02 00:00")
-    })
-
-    test("1514822400 == 1月2日", () => {
-        expect(formatDate(1514822400, 'mm月dd日')).toBe("1月2日")
-    })
-
-    test("1514822400 == 星期二", () => {
-        expect(formatDate(1514822400, 'week')).toBe(2)
-    })
-
-    test("1514822400 == 星期二", () => {
-        expect(formatDate(1514822400, 'week_cn')).toBe("二")
-    })
-
-    test("2019-01-13 06:30 == 2019-01-13", () => {
-        expect(formatDate("2019-01-13 06:30", 'y年m月d日')).toBe("2019年01月13日")
-    })
-
-    test("2019-01-13 06:30 == 2019-01-13", () => {
-        expect(formatDate("2019-1-13 06:30", 'y-m-d')).toBe("2019-01-13")
-    })
-
-    test("2019-1-13 -> 2019-01-13", () => {
-        expect(formatDate("2019-1-13", 'y-m-d')).toBe("2019-01-13")
-    })
-    test("1-13 -> 1-13", () => {
-        expect(formatDate("1-13", 'y-m-d')).toBe("1-13")
-    })
-    test("20190113 -> 2019-01-13", () => {
-        expect(formatDate("20190113", 'y-m-d')).toBe("2019-01-13")
-    })
-    test("2019-1-01 -> 2019-01-13", () => {
-        expect(formatDate("2019-1-01", 'y-m-d')).toBe("2019-01-01")
-    })
-
-    test("2019-1-01 -> 2019-01-13", () => {
-        expect(formatDate("2019-1-01", 'ymd')).toBe("20190101")
-    })
-
-    test("2019-1-01 -> 2019-01-13", () => {
-        expect(formatDate(1547602644000, 'y-m-d', 'ms')).toBe("2019-01-16")
-    })
-})
 
 
 // describe("test getRelativeDate", () => {
