@@ -1,5 +1,7 @@
 # 项目开发中的常用方法工具库
 
+![travis](https://api.travis-ci.org/banli17/bl-util.svg?branch=master)
+
 ## 安装
 
 ```
