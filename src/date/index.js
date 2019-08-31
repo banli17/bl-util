@@ -255,7 +255,7 @@ function rangeYMArray(startTime = '', endTime = '') {
  */
 export function datejs(date = new Date().getTime()) {
     // 处理兼容性
-    date = new Date(normalizeDate(date))
+    date = new Date(normalizeDate(date)).toGMTString()
     const timestamp = date.getTime()
 
     return {
