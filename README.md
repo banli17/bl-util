@@ -13,7 +13,7 @@ npm install bl-util --save-dev
 
 ### url链接
 
-```javascript
+```js
 var str = 'name=zs&age=12';
 var strObj = parse(str);  // {name:'zs',age:12}
 ```
@@ -30,7 +30,7 @@ var strObj = parse(str);  // {name:'zs',age:12}
 
 - util.hideString() 隐藏文字
 
-```javascript
+```js
 util.hideString('张三')  // *三
 util.hideString('王大锤')  // *锤
 util.hideString('王大锤',true)  // **锤
