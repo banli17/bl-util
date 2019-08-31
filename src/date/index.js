@@ -25,17 +25,17 @@ export const formatDate1 = (da) => {
  * 4. Date类型
  * @param date
  */
-export const toTimestamp = (date) => {
-    let res
+// export const toTimestamp = (date) => {
+//     let res
 
-    // 如果是字符串，转成2018/01/01（2018-01-01不兼容，需要使用/），再转时间戳
-    if (typeof date == 'string') {
-        res = new Date(date.replace(/(\d{4}).*(\d{2}).*(\d{2})/g, '$1/$2/$3'))
-    } else {
-        res = date
-    }
-    return res.getTime() / 1000
-}
+//     // 如果是字符串，转成2018/01/01（2018-01-01不兼容，需要使用/），再转时间戳
+//     if (typeof date == 'string') {
+//         res = new Date(date.replace(/(\d{4}).*(\d{2}).*(\d{2})/g, '$1/$2/$3'))
+//     } else {
+//         res = date
+//     }
+//     return res.getTime() / 1000
+// }
 
 export const addZero = (i) => {
     i = Number(i)
