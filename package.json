@@ -1,11 +1,13 @@
 {
   "name": "bl-util",
-  "version": "1.1.60",
-  "description": "common use functions",
-  "main": "dist/util.js",
+  "version": "1.1.63",
+  "description": "javascript util functions",
+  "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
-    "build": "webpack"
+    "test": "jest",
+    "test watch": "jest --watch",
+    "build": "webpack",
+    "prepublish": "webpack"
   },
   "author": "banli17",
   "license": "ISC",

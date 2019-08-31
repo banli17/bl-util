@@ -92,7 +92,6 @@ export const formatWorkDate = (timestamp) => {
  * @param date 2018-10-01
  */
 export function dateToDay(date) {
-    console.log(date)
     return new Date(`${date}`.replace(/-/g, '/')).getDay()
 }
 
@@ -137,7 +136,6 @@ function getRelativeMinutes(timestamp, relative) {
  * @param date
  */
 function getRelativeDate(timestamp, relative) {
-    console.log('timestamp', timestamp, relative)
     return getRelativeSeconds(timestamp, relative * 24 * 60 * 60)
 }
 

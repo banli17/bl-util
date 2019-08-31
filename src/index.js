@@ -46,7 +46,6 @@ const blUtil = {
      * ]
      */
     validForm(fields, tip) {
-        console.log('value', fields)
         for (let i = 0; i < fields.length; i++) {
             let { regExp, type, value, title, required } = fields[i]
 
@@ -65,7 +64,6 @@ const blUtil = {
 
             // 如果是base64,说明是默认图片
             if (type === 'image') {
-                console.log('image', /data:image/.test(value))
                 if (/data:image/.test(value)) {
                     tip(`请输入${title}`)
                     return false
