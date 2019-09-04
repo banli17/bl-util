@@ -12,6 +12,9 @@
   "author": "banli17",
   "license": "ISC",
   "devDependencies": {
+    "commitizen": "^4.0.3",
+    "commitlint": "^8.1.0",
+    "conventional-changelog": "^3.1.10",
     "jest": "^24.7.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.30.0",
