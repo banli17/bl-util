@@ -13,9 +13,9 @@ npm install bl-util --save-dev
 - [url链接](#url链接)
 - [date日期](#Date日期)
 
-### url 链接
+### url链接
 
-```js
+```
 var str = 'name=zs&age=12';
 var strObj = parse(str);  // {name:'zs',age:12}
 ```
