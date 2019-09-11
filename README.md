@@ -30,7 +30,7 @@ var strObj = parse(str);  // {name:'zs',age:12}
 
 ### 字符串方法
 
-- util.hideString() 隐藏文字
+- util.hideString()  隐藏文字
 
 ```js
 util.hideString('张三')  // *三
